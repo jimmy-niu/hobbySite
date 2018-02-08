@@ -91,7 +91,7 @@ img{
 .code-box{
     background-color: black;
     font-size: 1.2vw;
-    font-family: consolas;
+    font-family: 'Consolas', sans-serif;
     color: white;
     padding: 2vh 2vw 2vh 2vw;
     white-space: pre-wrap;
