@@ -16,12 +16,12 @@
     <body>
         <div class = "header">
         <div id = 'name'  class = 'menu-item' style= "width: 13vw;">
-                <a href = "index.html" style = "max-width: 5vw; text-decoration: underline;
-                text-shadow: 2px 2px red;">
+                <a href = "index.html" style = "max-width: 5vw;">
                     <i class = "icon fa fa-angellist" style = "margin-right: 1.9vw;"></i>Jimmy N</div></a>
 
             <div class = "menu-box" id = "menu1">
-                <a href = "bike.html"><div id = 'bike'  class = 'menu-item'>
+                <a href = "bike.html" style = "text-decoration: underline;
+                text-shadow: 2px 2px red;"><div id = 'bike'  class = 'menu-item'>
                     <i class = "icon fa fa-bicycle" style = "margin-right: 1.4vw;"></i>Bike</div> </a>
                 <a href = "urbex.html"><div id = 'urbex'  class = 'menu-item'>
                     <i class = "icon fa fa-compass" style = "margin-right: 2.3vw;"></i>Urbex </div> </a>
@@ -51,7 +51,7 @@
 
         var list = []
         var indices = []
-        int numberOfImages = 10;
+        var numberOfImages = 10;
         for(i = 0; i < numberOfImages; i++){
             indices[i] = parseInt(i+1);
             list[i] = "https://jimmy-niu.github.io/hobbySite/media/bike/"+ (i+1) + ".jpg";
