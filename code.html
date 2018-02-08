@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>JN Fun</title>
+        <meta name="description" content="Jimmy Niu Hobbies">
+
+        <!-- Adding css stylesheets. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Barlow+Condensed">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Barlow">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+    </head>
+
+    <body>
+        <div class = "header">
+        <div id = 'name'  class = 'menu-item' style= "width: 13vw;">
+                <a href = "index.html" style = "max-width: 5vw; text-decoration: underline;
+                text-shadow: 2px 2px red;">
+                    <i class = "icon fa fa-angellist" style = "margin-right: 1.9vw;"></i>Jimmy N</div></a>
+
+            <div class = "menu-box" id = "menu1">
+                <a href = "bike.html"><div id = 'bike'  class = 'menu-item'>
+                    <i class = "icon fa fa-bicycle" style = "margin-right: 1.4vw;"></i>Bike</div> </a>
+                <a href = "urbex.html"><div id = 'urbex'  class = 'menu-item'>
+                    <i class = "icon fa fa-compass" style = "margin-right: 2.3vw;"></i>Urbex </div> </a>
+            </div>
+
+            <div class = "menu-box" id = "menu2">
+                <a href = "code.html"><div id = 'digital'  class = 'menu-item'>
+                    <i class = "icon fa fa-code" style = "margin-right: 1.9vw;"></i>Code </div> </a>
+                <a href = "words.html"><div id = 'writing' class = 'menu-item'>
+                    <i class = "icon fa fa-bold" style = "margin-right: 2.5vw;"></i>Words </div> </a>
+            </div>
+
+        </div>
+        <div id= "main-title">
+            Code
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+
+        <div class = "word-box" style = "white-space: normal !important;">
+            <a href = "https://github.com/MLuebbers/Wander" style = "color:black;">GITHUB: Hack@Brown Node.JS/Hapi Server</a>
+            <br><br>
+            <div class = "code-box">const Hapi = require('hapi');
+            const mysql = require('mysql');
+
+            const server = new  Hapi.Server();
+            server.connection({port: 3004, host: '0.0.0.0'}); // needed for digital ocean.
+
+            function addDemoPoints(){
+                var test = [];
+                test.push([41.8267760, -71.4044182, "Clock big old", true]);
+                test.push([41.8264849, -71.4014262, "I is blue. I is bear. I is light", true]);
+                test.push([41.8273806, -71.4017960, "Silver man, woman, circle", true]);
+
+                test.push([41.8274096, -71.4039727, "Small road building", true]);
+                test.push([41.8263838, -71.4035982, "Old rocks", true]);
+                test.push([41.8269332, -71.4030014, "Look down and up up", true]);
+                test.push([41.8272539, -71.4028280, "Light, rocks, high", true]);
+
+                connection.query('INSERT INTO points (longitude, latitude, words, free) VALUES ?', [test], function (err, result) {
+                if (err) {
+                    throw err;
+                }
+                    // console.log("1 record inserted");
+                });
+
+                connection.query("SELECT * FROM points", function (err, result, fields) {
+                    if (err){
+                      throw err;
+                    }
+                    console.log(result);
+                });
+
+            }
+
+
+            const connection = mysql.createConnection({
+                host: 'localhost',
+                user: 'root',
+                password: 'password',
+                database: 'wander'
+            });
+
+            connection.connect(function(err) {
+                if(err){
+                    console.error('error connecting: ' + err.stack);
+                    return;
+                }
+
+                console.log('connected as id ' + connection.threadId);
+
+                addDemoPoints();
+            });
+            server.register(require('inert'), (err) => {
+
+                if (err) {
+                    throw err;
+                }
+
+                server.route({
+                    method: 'GET',
+                    path: '/home',
+                    handler: function (request, reply) {
+                        // reply('Hello, world!');
+                        reply.file('./public/index.html');
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/jquery-3.2.1.min.js',
+                    handler: function (request, reply) {
+                        reply.file('./public/jquery-3.2.1.min.js');
+                    }
+                });
+
+                 server.route({
+                    method: 'GET',
+                    path: '/jquery-3.3.1.min.js',
+                    handler: function (request, reply) {
+                        reply.file('./Test/jquery-3.3.1.min.js');
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/popup_script.js',
+                    handler: function (request, reply) {
+                        reply.file('./public/popup_script.js');
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/main.css',
+                    handler: function (request, reply) {
+                        reply.file('./public/main.css');
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/map_script.js',
+                    handler: function (request, reply) {
+                        reply.file('./public/map_script.js');
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/script.js',
+                    handler: function (request, reply) {
+                        reply.file('./public/script.js');
+                    }
+                });
+            });
+
+            server.start((err) => {
+                if(err){
+                    throw err;
+                }
+                console.log(`Server running at: ${server.info.uri}`); // that's a back tick
+
+            });
+
+            server.route({
+                method: 'GET',
+                path: '/add',
+                handler: function(request, reply){
+                    var lon = (request.query.longitude);
+                    var lat = (request.query.latitude);
+                    var words = (request.query.words);
+                    var free = (request.query.free == 'true');
+                    var test = [];
+                    test.push([lon, lat, words, free]);
+
+                    connection.query('INSERT INTO points (longitude, latitude, words, free) VALUES ?', [test], function (err, result) {
+                    if (err) {
+                        throw err;
+                    }
+                        reply("Point Saved");
+                        // console.log("1 record inserted");
+                    });
+
+                    connection.query("SELECT * FROM points", function (err, result, fields) {
+                        if (err){
+                          throw err;
+                        }
+                        console.log(result);
+                    });
+                }
+            });
+
+
+            server.route({
+                method: 'GET',
+                path: '/get',
+                handler: function(request, reply){
+                    // var lon = (request.query.longitude);
+                    // var lat = (request.query.latitude);
+                     // WHERE (latitude between (lat - 0.005) AND (lat + 0.005)) and WHERE (longitude between (lon - 0.005) AND (lon + 0.005))"
+                    connection.query("SELECT * FROM points", function (err, result, fields) {
+                        if (err){
+                          throw err;
+                        }
+                        reply(result);
+                        console.log(result);
+                    });
+                }
+            });
+            </div>
+
+        </div>
+    </body>
+
+</html>

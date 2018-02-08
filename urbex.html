@@ -36,7 +36,7 @@
 
         </div>
         <div id= "main-title">
-            Jimmy N
+            Urbex
         </div>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -51,15 +51,14 @@
 
         var list = []
         var indices = []
-        int numberOfImages = 6;
-        for(i = 0; i < numberOfImages; i++){
+        for(i = 0; i < 16; i++){
             indices[i] = parseInt(i+1);
-            list[i] = "https://jimmy-niu.github.io/hobbySite/media/me/"+ (i+1) + ".jpg";
+            list[i] = "https://jimmy-niu.github.io/hobbySite/media/urbex/"+ (i+1) + ".jpg";
         }
 
         shuffleArray(indices);
 
-        for(i = 0; i < numberOfImages; i++){
+        for(i = 0; i < 16; i++){
             var random =  Math.round((Math.random() * 3))
             if(list[indices[i]] == undefined){
                 continue;
