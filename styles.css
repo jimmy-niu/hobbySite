@@ -1,0 +1,101 @@
+body{
+    background-color: #333333;
+    background: linear-gradient(to right, #333333 0%, #333333 40%, white 40%, white 100%);
+}
+.header{
+    padding: 1% 0% 0% 1%;
+    margin-bottom: 7.5%;
+}
+
+.header *{
+    font-size: 2vw;
+    margin-bottom: 1vh;
+    text-decoration: none;
+}
+
+#name, #name *{
+    font-size: 3vw;
+    padding-bottom: 1vh;
+}
+
+
+.menu-item:hover{
+    text-decoration: underline;
+    text-shadow: 2px 2px red;
+}
+
+.menu-item:hover *{
+    font-size: 2.1vw;
+}
+
+.menu-box{
+    display: inline;
+    float: left;
+    padding-right: 2.5vw;
+    border-right: 2px solid white;
+    height: 11vh;
+    margin-left: 2.5vw;
+}
+
+#menu1{
+    margin-left: 0vw !important;
+}
+#menu2{
+    border-right: none;
+}
+
+#main-title{
+    letter-spacing: 0.5vw;
+    border-top: 6px solid white;
+    padding-top: 2vh;
+    font-weight: 550;
+    text-shadow: 4px 4px black;
+    width: 40%;
+    clear:both;
+    text-align: center;
+    font-size: 8vw;
+}
+
+p{
+    font-size: 20px;
+    padding: 1%;
+    max-width: 36vw;
+    max-height: 50vh;
+    overflow: auto;
+    text-align: justify;
+    line-height: 5vh;
+    text-shadow: 1px 1px black;
+}
+
+img{
+    filter: grayscale(100%) contrast(150%);
+    width: 40vw;
+}
+
+.word-box{
+    font-size: 10vh;
+    color: black;
+    position: absolute;
+    text-align: justify;
+    top: 5vh;
+    left: 44vw;
+    width: 50vw;
+    max-height: 85vh;
+    padding-bottom: 2%;
+    overflow: auto;
+}
+
+.image-box{
+    position: absolute;
+    top: 5vh;
+    left: 44vw;
+    width: 50vw;
+    max-height: 85vh;
+    padding-bottom: 2%;
+    overflow: auto;
+}
+
+html *{
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif, 'Consolas';
+}

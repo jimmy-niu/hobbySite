@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>JN Fun</title>
+        <meta name="description" content="Jimmy Niu Hobbies">
+
+        <!-- Adding css stylesheets. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Barlow+Condensed">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Barlow">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+    </head>
+
+    <body>
+        <div class = "header">
+        <div id = 'name'  class = 'menu-item' style= "width: 13vw;">
+                <a href = "#info" style = "max-width: 5vw; text-decoration: underline;
+                text-shadow: 2px 2px red;">
+                    <i class = "icon fa fa-angellist" style = "margin-right: 1.9vw;"></i>Jimmy N</div></a>
+
+            <div class = "menu-box" id = "menu1">
+                <a href = "#Bike"><div id = 'bike'  class = 'menu-item'>
+                    <i class = "icon fa fa-bicycle" style = "margin-right: 1.4vw;"></i>Bike</div> </a>
+                <a href = "#Urbex"><div id = 'urbex'  class = 'menu-item'>
+                    <i class = "icon fa fa-compass" style = "margin-right: 2.3vw;"></i>Urbex </div> </a>
+            </div>
+
+            <div class = "menu-box" id = "menu2">
+                <a href = "#Code"><div id = 'digital'  class = 'menu-item'>
+                    <i class = "icon fa fa-code" style = "margin-right: 1.9vw;"></i>Code </div> </a>
+                <a href = "#Writing"><div id = 'writing' class = 'menu-item'>
+                    <i class = "icon fa fa-bold" style = "margin-right: 2.5vw;"></i>Words </div> </a>
+            </div>
+
+        </div>
+        <div id= "main-title">
+            Jimmy N
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <div class = "image-box">
+        </div>
+
+        <script type='text/javascript' src="jquery-3.2.1.min.js"></script>
+        <script defer>
+        var folder = "media/urbex/";
+
+        $.ajax({
+            url : folder,
+            success: function (data) {
+                $(data).find("a").attr("href", function (i, val) {
+                    if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                        $("body").append( "<img src='"+ folder + val +"'>" );
+                    }
+                });
+            }
+        });
+        </script>
+    </body>
+
+</html>
