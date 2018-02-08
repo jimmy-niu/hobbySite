@@ -47,18 +47,31 @@
 
         <script type='text/javascript' src="jquery-3.2.1.min.js"></script>
         <script defer>
-        var folder = "media/urbex/";
+        const shuffleArray = arr => arr.sort(() => Math.random() - 0.5)
 
-        $.ajax({
-            url : folder,
-            success: function (data) {
-                $(data).find("a").attr("href", function (i, val) {
-                    if( val.match(/\.(jpe?g|png|gif)$/) ) {
-                        $("body").append( "<img src='"+ folder + val +"'>" );
-                    }
-                });
+        var folder = 'https://jimmy-niu.github.io/hobbySite/media/urbex/';
+        var list = []
+        var indices = []
+        for(i = 1; i < 17; i++){
+            indices[i] = parseInt(i);
+            list[i] = "https://jimmy-niu.github.io/hobbySite/media/urbex/"+ i + ".jpg";
+        }
+        shuffleArray(indices);
+        for(i = 1; i < 17; i++){
+            var random =  Math.round((Math.random() * 3))
+            if(random == 0){
+                $(".image-box").append( "<img src=\""+list[indices[i]]+"\" style = \"min-width: 30vw; \" align = \"left\">" );
             }
-        });
+            else if(random == 1){
+                $(".image-box").append( "<img src=\""+list[indices[i]]+"\" style = \"min-width: 5vw;\" align = \"right\">" );
+            }
+            else if (random == 2){
+                $(".image-box").append( "<img src=\""+list[indices[i]]+"\" style = \"min-width: 45vw;\" align = \"center\">" );
+            }
+            // $(".image-box").append( "<img src="+list[indices[i]]+">" );
+        }
+
+
         </script>
     </body>
 
